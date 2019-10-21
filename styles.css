@@ -1,0 +1,159 @@
+/* ********** GLOBAL ********** */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid black; */
+}
+
+/* ********** BODY ********** */
+
+body {
+  display: flex;
+  background-color: #EAEAF4;
+  font-family: 'Open Sans';
+}
+
+/* ********** ASIDE ********** */
+
+aside {
+  background-color: #1F1F3D;
+  color: #E9E9F3;
+  width: 20%;
+}
+
+aside h1 {
+  color: #BFBFDD;
+  padding: 15px;
+}
+
+#starred-ideas-div {
+  border: 2px solid #353567;
+  display: flex;
+  flex-flow: column nowrap;
+} 
+
+#starred-ideas-div p {
+  padding: 15px;
+}
+
+#show-starred-idea-btn {
+  background-color: #353567;
+  color: #E9E9F3;
+  padding: 15px;
+  width: 90%;
+  align-self: center;
+  margin: 15px 0px 30px;
+  border-radius: 2px;
+}
+
+/* ********** MAIN ********** */
+
+main {
+  width: 80%;
+}
+
+/* ********** FORM SECTION ********** */
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  background-color: #A9AAD2;
+  margin-left: 1px;
+  width: 100%;
+}
+
+.form-section form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 50%;
+}
+
+.form-section form * {
+  margin: 10px;
+  border: 2px solid #353567;
+}
+
+.form-section form label {
+  border: 0px;
+  outline: none;
+  margin-bottom: 0;
+}
+
+input,
+textarea {
+  font-size: 16px;
+}
+
+input {
+  padding: 10px;
+}
+
+textarea {
+  height: 100px;
+}
+
+#save-btn {
+  background-color: #1F1F3D;
+  color: #FFF;
+  padding: 20px;
+  font-size: 26px;
+}
+
+#search-box {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+#search-box * {
+  margin: 0;
+}
+
+#search-box button {
+  background: #1F1F3D url(./assets/search.svg) no-repeat center/50%;
+  width: 10%;
+  border: none;
+}
+
+#search-box input {
+  width: 90%;
+  border: none;
+}
+
+/* ********** CARD SECTION ********** */
+
+.cards {
+  width: 300px;
+  border: 2px solid black;
+  margin: 20px;
+  background-color: #FFF;
+}
+
+.cards h2 {
+  margin: 15px;
+}
+
+.cards p {
+  padding: 0px 15px 15px;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+
+.card-header {
+  background-color: #1F1F3D;
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.card-content {
+  height: 200px;
+}
+
+.card-footer {
+  background-color: #5354A4;
+  height: 30px;
+}
