@@ -5,26 +5,40 @@ var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section')
 
+formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
 // cardsContainer.addEventListener('click', cardHandler);
 
 function formHandler(event) {
+  event.preventDefault();
   if (event.target.classList.contains('save')) {
-    event.preventDefault();
     createIdea();
+    clearInputs();
   }
   console.log(event.target);
 }
 
+function clearInputs() {
+  titleInput.value = '';
+  bodyInput.value = '';
+  saveButton.disabled = true;
+  saveButton.classList.remove('active-save-btn');
+}
 
 function createIdea() {
-  var card = new Idea(titleInput.value, bodyInput.value, Date.now());
-  showIdea(card);
-};
+  var cards = new Idea(titleInput.value, bodyInput.value);
+  showIdea();
+}
 
+function saveButtonToggle() {
+  event.preventDefault();
+  if(titleInput.value !== '' && bodyInput.value !== '') {
+    saveButton.classList.add('active-save-btn');
+    saveButton.disabled = false;
+  }
+}
 
-
-function showIdea(card) {
+function showIdea() {
   cardsContainer.insertAdjacentHTML('beforeend',
   `<article class='cards'>
     <div class='card-header'>
@@ -32,8 +46,8 @@ function showIdea(card) {
       <button class='card-btns delete-btn'></button>
     </div>
     <div class='card-content'>
-      <h2>${card.title}</h2>
-      <p>${card.body}</p>
+      <h2>${titleInput.value}</h2>
+      <p>${bodyInput.value}</p>
     </div>
     <div class='card-footer'>
       <button class='card-btns  comment-btn'></button>
