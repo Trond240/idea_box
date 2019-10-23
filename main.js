@@ -3,6 +3,7 @@ var bodyInput = document.querySelector('.body-input');
 var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section');
+var card = new Idea(titleInput.value, bodyInput.value);
 
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
@@ -26,8 +27,8 @@ function clearInputs() {
 }
 
 function createIdea() {
-  var cards = new Idea(titleInput.value, bodyInput.value);
-  showIdea();
+  var card = new Idea(titleInput.value, bodyInput.value);
+  showIdea(card);
 }
 
 function saveButtonToggle() {
@@ -38,16 +39,16 @@ function saveButtonToggle() {
   }
 }
 
-function showIdea() {
+function showIdea(card) {
   cardsContainer.insertAdjacentHTML('beforeend',
   `<article class='cards'>
     <div class='card-header'>
-      <button class='card-btns favorite-btn'></button>
+      <button class='card-btns disable-favorite-btn'></button>
       <button class='card-btns delete-btn'></button>
     </div>
     <div class='card-content'>
-      <h2>${titleInput.value}</h2>
-      <p>${bodyInput.value}</p>
+      <h2>${card.title}</h2>
+      <p>${card.body}</p>
     </div>
     <div class='card-footer'>
       <button class='card-btns  comment-btn'></button>
@@ -59,7 +60,11 @@ function showIdea() {
 // ********** Begining of cardhandler and card functions ************ //
 
 function cardHandler(event) {
-  if(event.target.classList.contains('delete-btn')) {
+  if (event.target.classList.contains('delete-btn')) {
     event.target.parentNode.parentNode.remove();
+  }
+  if (event.target.classList.contains('disable-favorite-btn')) {
+    event.target.classList.toggle('active-favorite-btn');
+    card.starred = !card.starred;
   }
 }
