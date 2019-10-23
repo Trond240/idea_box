@@ -9,20 +9,22 @@ formSection.addEventListener('click', formHandler);
 // cardsContainer.addEventListener('click', cardHandler);
 
 function formHandler(event) {
-  event.preventDefault();
   if (event.target.classList.contains('save')) {
+    event.preventDefault();
     createIdea();
   }
   console.log(event.target);
 }
 
+
 function createIdea() {
-  var cards = new Idea(titleInput.value, bodyInput.value);
-  showIdea();
-}
+  var card = new Idea(titleInput.value, bodyInput.value, Date.now());
+  showIdea(card);
+};
 
 
-function showIdea() {
+
+function showIdea(card) {
   cardsContainer.insertAdjacentHTML('beforeend',
   `<article class='cards'>
     <div class='card-header'>
@@ -30,8 +32,8 @@ function showIdea() {
       <button class='card-btns delete-btn'></button>
     </div>
     <div class='card-content'>
-      <h2>${titleInput.value}</h2>
-      <p>${bodyInput.value}</p>
+      <h2>${card.title}</h2>
+      <p>${card.body}</p>
     </div>
     <div class='card-footer'>
       <button class='card-btns  comment-btn'></button>
