@@ -171,7 +171,11 @@ textarea {
   outline: 0px;
 }
 
-.favorite-btn {
+.disable-favorite-btn {
+  background: url(./assets/star.svg) no-repeat center/100%;
+}
+
+.active-favorite-btn {
   background: url(./assets/star-active.svg) no-repeat center/100%;
 }
 
