@@ -102,11 +102,18 @@ textarea {
   height: 100px;
 }
 
-#save-btn {
-  background-color: #353567;
+.save {
   color: #FFF;
   padding: 20px;
   font-size: 26px;
+}
+
+.disable-save-btn {
+  background-color: #585759;
+}
+
+.active-save-btn {
+  background-color: #353567;
 }
 
 #search-box {
@@ -178,7 +185,7 @@ textarea {
 
 .card-footer {
   background-color: #5354A4;
-  height: 30px;  
+  height: 30px;
   display: flex;
   align-items: center;
 }
@@ -199,12 +206,12 @@ textarea {
 /* *********** MEDIA QUERIES ********** */
 
 @media screen and (max-width: 875px) {
-  
+
   .form-section form {
     width: 70%;
     min-width: 0;
   }
-  
+
   .cards {
     width: 100%;
   }
@@ -255,7 +262,7 @@ textarea {
   }
 
 }
-/* 
+/*
 @media screen and (max-width: 400px) {
 
   .form-section form {

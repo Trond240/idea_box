@@ -5,6 +5,7 @@ var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section')
 
+formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
 // cardsContainer.addEventListener('click', cardHandler);
 
@@ -20,6 +21,8 @@ function formHandler(event) {
 function clearInputs() {
   titleInput.value = '';
   bodyInput.value = '';
+  saveButton.disabled = true;
+  saveButton.classList.remove('active-save-btn');
 }
 
 function createIdea() {
@@ -27,6 +30,13 @@ function createIdea() {
   showIdea();
 }
 
+function saveButtonToggle() {
+  event.preventDefault();
+  if(titleInput.value !== '' && bodyInput.value !== '') {
+    saveButton.classList.add('active-save-btn');
+    saveButton.disabled = false;
+  }
+}
 
 function showIdea() {
   cardsContainer.insertAdjacentHTML('beforeend',
