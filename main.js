@@ -1,13 +1,14 @@
 var titleInput = document.querySelector('.title-input');
 var bodyInput = document.querySelector('.body-input');
-// var saveButton = document.getElementById('save-btn');
 var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
-var cardsContainer = document.querySelector('.card-section')
+var cardsContainer = document.querySelector('.card-section');
 
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
-// cardsContainer.addEventListener('click', cardHandler);
+cardsContainer.addEventListener('click', cardHandler);
+
+// ********** Begining of formhandler and card functions ************ //
 
 function formHandler(event) {
   event.preventDefault();
@@ -15,7 +16,6 @@ function formHandler(event) {
     createIdea();
     clearInputs();
   }
-  console.log(event.target);
 }
 
 function clearInputs() {
@@ -53,5 +53,13 @@ function showIdea() {
       <button class='card-btns  comment-btn'></button>
       <label class='comment-label'>Comment</label>
     </div>
-  </article>`) ;
+  </article>`);
 };
+
+// ********** Begining of cardhandler and card functions ************ //
+
+function cardHandler(event) {
+  if(event.target.classList.contains('delete-btn')) {
+    event.target.parentNode.parentNode.remove();
+  }
+}
