@@ -3,7 +3,8 @@ var bodyInput = document.querySelector('.body-input');
 var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section');
-var card = new Idea(titleInput.value, bodyInput.value);
+var card = null;
+var ideaArray = [];
 
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
@@ -27,9 +28,12 @@ function clearInputs() {
 }
 
 function createIdea() {
-  var card = new Idea(titleInput.value, bodyInput.value);
+  // for (var i = 0; i < ideas.length; i++) {
+  card = new Idea(titleInput.value, bodyInput.value, Date.now());
+  ideaArray.push(card);
   showIdea(card);
 }
+
 
 function saveButtonToggle() {
   event.preventDefault();
