@@ -4,7 +4,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* border: 1px solid black; */
 }
 
 /* ********** BODY ********** */
@@ -73,7 +72,11 @@ main {
   min-width: 500px;
 }
 
-.form-section form * {
+.form-section form label,
+.form-section form input,
+.form-section form textarea,
+.form-section form div,
+.form-section form button {
   margin: 10px;
   border: 2px solid #353567;
 }
@@ -92,6 +95,7 @@ label {
 input,
 textarea {
   font-size: 16px;
+  padding: 10px;
 }
 
 input {
@@ -100,6 +104,7 @@ input {
 
 textarea {
   height: 100px;
+  overflow: scroll;
 }
 
 .save {
@@ -185,6 +190,7 @@ textarea {
 
 .card-content {
   height: 200px;
+  overflow: scroll;
 }
 
 .card-footer {
@@ -266,11 +272,3 @@ textarea {
   }
 
 }
-/*
-@media screen and (max-width: 400px) {
-
-  .form-section form {
-    width: 90%;
-  }
-
-} */
