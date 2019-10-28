@@ -31,7 +31,7 @@ function clearInputs() {
 
 function createIdea() {
   // for (var i = 0; i < ideas.length; i++) {
-  card = new Idea(titleInput.value, bodyInput.value, Date.now());
+  card = new Idea(Date.now(), titleInput.value, bodyInput.value);
   ideaArray.push(card);
   showIdea(card);
   card.saveToStorage();
@@ -48,7 +48,7 @@ function saveButtonToggle() {
 
 function showIdea(card) {
   cardsContainer.insertAdjacentHTML('beforeend',
-  `<article class='cards'>
+  `<article class='cards' data-id='${card.id}'>
     <div class='card-header'>
       <button class='card-btns disable-favorite-btn'></button>
       <button class='card-btns delete-btn'></button>
@@ -68,13 +68,17 @@ function showIdea(card) {
 
 function cardHandler(event) {
   if (event.target.classList.contains('delete-btn')) {
+    console.log(event);
     event.target.parentNode.parentNode.remove();
+    card.deleteFromStorage(event);
   }
   if (event.target.classList.contains('disable-favorite-btn')) {
     event.target.classList.toggle('active-favorite-btn');
     card.starred = !card.starred;
   }
 }
+
+
 
 function retrieveIdeas() {
   var getIdeas = localStorage.getItem("ideaLocalStorage");
@@ -83,12 +87,13 @@ function retrieveIdeas() {
 }
 
 function displayLocalStorageCards() {
+  console.log(localStorage.key)
   var fromStorage = retrieveIdeas();
   if (localStorage.getItem("ideaLocalStorage") === null) {
     ideaArray = [];
   }else{
     for (var i = 0; i < fromStorage.length; i++) {
-    var localStorageCard = new Idea(fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred, fromStorage[i].id);
+    var localStorageCard = new Idea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred);
     showIdea(localStorageCard);
     ideaArray.push(localStorageCard);
     }

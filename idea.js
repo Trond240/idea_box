@@ -1,10 +1,9 @@
 class Idea {
-  constructor(title, body) {
+  constructor(id, title, body) {
+    this.id = id || Date.now();
     this.title = title;
     this.body = body;
     this.starred = false;
-    this.id = Date.now();
-
   }
 
   saveToStorage() {
@@ -12,12 +11,18 @@ class Idea {
     localStorage.setItem("ideaLocalStorage", stringifiedIdeas);
   }
 
-  deleteFromStroage() {
+  updateIdea(){
 
   }
 
-  updateIdea(){
-
+  deleteFromStorage(event) {
+    var fromStorage = retrieveIdeas();
+    var selectedCard = event.target.parentElement.parentNode.attributes.class.ownerElement.dataset.id;
+    for (var i = 0; i < fromStorage.length; i++) {
+      if (selectedCard === fromStorage[i].id) {
+        localStorage.removeItem("ideaLocalStorage[i].id");
+      }
+    }
   }
 }
 
