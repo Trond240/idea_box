@@ -23,7 +23,7 @@ aside {
 }
 
 aside h1 {
-  color: #BFBFDD;
+  color: #FFF;
   padding: 15px;
 }
 
@@ -36,16 +36,23 @@ aside h1 {
 
 #starred-ideas-div p {
   padding: 15px;
+  color: #BFBFDD;
+  font-weight: bold;
 }
 
 #show-starred-idea-btn {
-  align-self: center;
-  background-color: #353567;
-  border-radius: 2px;
+  background-color: #5356A4;
   color: #E9E9F3;
-  margin: 15px 0px 30px;
-  padding: 15px;
+  padding: 12px;
   width: 90%;
+  align-self: center;
+  margin: 15px 0px 30px;
+  border-radius: 2px;
+  font-size: 22px;
+  font-weight: bold;
+  border: 2px solid #353567;
+  font-family: 'Open sans';
+  cursor: pointer;
 }
 
 /* ********** MAIN ********** */
@@ -90,6 +97,7 @@ main {
 
 label {
   font-size: 18px;
+  color: #1F1F3D;
   font-weight: bold;
 }
 
@@ -109,9 +117,11 @@ textarea {
 }
 
 .save {
-  color: #FFF;
-  font-size: 26px;
-  padding: 20px;
+  color: #BFBFDD;
+  padding: 16px;
+  font-size: 24px;
+  font-family: 'Open sans';
+  font-weight: bold;
 }
 
 .disable-save-btn {
@@ -120,6 +130,7 @@ textarea {
 
 .active-save-btn {
   background-color: #353567;
+  cursor: pointer;
 }
 
 #search-box {
@@ -133,13 +144,14 @@ textarea {
 
 #search-box button {
   background: #353567 url(./assets/search.svg) no-repeat center/50%;
+  width: 8.5%;
   border: none;
-  width: 10%;
+  cursor: pointer;
 }
 
 #search-box input {
+  width: 91.5%;
   border: none;
-  width: 90%;
 }
 
 /* ********** CARD SECTION ********** */
@@ -179,6 +191,7 @@ textarea {
   border: none;
   height: 30px;
   outline: 0px;
+  cursor: pointer;
   width: 30px;
 }
 
