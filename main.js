@@ -6,6 +6,8 @@ var cardsContainer = document.querySelector('.card-section');
 var card = null;
 var ideaArray = [];
 
+
+window.onload = displayLocalStorageCards();
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
 cardsContainer.addEventListener('click', cardHandler);
@@ -32,6 +34,7 @@ function createIdea() {
   card = new Idea(titleInput.value, bodyInput.value, Date.now());
   ideaArray.push(card);
   showIdea(card);
+  card.saveToStorage();
 }
 
 
@@ -70,5 +73,24 @@ function cardHandler(event) {
   if (event.target.classList.contains('disable-favorite-btn')) {
     event.target.classList.toggle('active-favorite-btn');
     card.starred = !card.starred;
+  }
+}
+
+function retrieveIdeas() {
+  var getIdeas = localStorage.getItem("ideaLocalStorage");
+  var parsedIdeas = JSON.parse(getIdeas);
+  return parsedIdeas;
+}
+
+function displayLocalStorageCards() {
+  var fromStorage = retrieveIdeas();
+  if (localStorage.getItem("ideaLocalStorage") === null) {
+    ideaArray = [];
+  }else{
+    for (var i = 0; i < fromStorage.length; i++) {
+    var localStorageCard = new Idea(fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred, fromStorage[i].id);
+    showIdea(localStorageCard);
+    ideaArray.push(localStorageCard);
+    }
   }
 }
