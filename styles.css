@@ -4,7 +4,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  /* border: 1px solid black; */
 }
 
 /* ********** BODY ********** */
@@ -65,9 +64,9 @@ main {
 /* ********** FORM SECTION ********** */
 
 .form-section {
+  background-color: #A9AAD2;
   display: flex;
   justify-content: center;
-  background-color: #A9AAD2;
   margin-left: 1px;
   width: 100%;
 }
@@ -76,25 +75,30 @@ main {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  width: 50%;
   min-width: 500px;
+  width: 50%;
 }
 
-.form-section form * {
-  margin: 10px;
+.form-section form button,
+.form-section form div,
+.form-section form input,
+.form-section form label,
+.form-section form textarea {
   border: 2px solid #353567;
+  font-family: 'Open Sans';
+  margin: 10px;
 }
 
 .form-section form label {
   border: 0px;
-  outline: none;
   margin-bottom: 0;
+  outline: none;
 }
 
 label {
-  font-weight: bold;
   font-size: 18px;
   color: #1F1F3D;
+  font-weight: bold;
 }
 
 input,
@@ -109,6 +113,7 @@ input {
 
 textarea {
   height: 100px;
+  overflow: scroll;
 }
 
 .save {
@@ -151,12 +156,18 @@ textarea {
 
 /* ********** CARD SECTION ********** */
 
+.card-section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
 .cards {
-  width: 300px;
-  border: 2px solid black;
-  margin: 20px;
   background-color: #FFF;
   border-radius: 2px;
+  border: 2px solid black;
+  margin: 20px;
+  width: 300px;
 }
 
 .cards h2 {
@@ -164,25 +175,24 @@ textarea {
 }
 
 .cards p {
-  padding: 0px 15px 15px;
   font-size: 20px;
   margin-right: 15px;
+  padding: 0px 15px 15px;
 }
-
 
 .card-header {
   background-color: #1F1F3D;
   display: flex;
-  justify-content: space-between;
   height: 30px;
+  justify-content: space-between;
 }
 
 .card-btns {
-  width: 30px;
-  height: 30px;
   border: none;
+  height: 30px;
   outline: 0px;
   cursor: pointer;
+  width: 30px;
 }
 
 .disable-favorite-btn {
@@ -199,13 +209,14 @@ textarea {
 
 .card-content {
   height: 200px;
+  overflow: scroll;
 }
 
 .card-footer {
-  background-color: #5354A4;
-  height: 30px;
-  display: flex;
   align-items: center;
+  background-color: #5354A4;
+  display: flex;
+  height: 30px;
 }
 
 .comment-btn {
@@ -214,11 +225,6 @@ textarea {
 
 .comment-label {
   color: #FFF;
-}
-
-.card-section {
-  display: flex;
-  flex-flow: row wrap;
 }
 
 /* *********** MEDIA QUERIES ********** */
@@ -236,7 +242,7 @@ textarea {
 
 }
 
-@media screen and (max-width: 675px) {
+@media screen and (max-width: 575px) {
 
   body {
     flex-flow: column nowrap;
@@ -264,11 +270,11 @@ textarea {
 
   .mobile-menu-inactive {
     background: url(./assets/menu.svg) no-repeat center/100%;
-    display: flex;
-    width: 50px;
-    justify-self: flex-start;
     border: none;
+    display: flex;
+    justify-self: flex-start;
     outline: 0;
+    width: 50px;
   }
 
   .mobile-menu-active {
@@ -280,11 +286,3 @@ textarea {
   }
 
 }
-/*
-@media screen and (max-width: 400px) {
-
-  .form-section form {
-    width: 90%;
-  }
-
-} */
