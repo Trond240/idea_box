@@ -27,14 +27,14 @@ aside h1 {
   padding: 15px;
 }
 
-#starred-ideas-div {
+.starred-ideas-div {
   border-top: 2px solid #353567;
   border-bottom: 2px solid #353567;
   display: flex;
   flex-flow: column nowrap;
 }
 
-#starred-ideas-div p {
+.starred-ideas-div p {
   padding: 15px;
   color: #BFBFDD;
   font-weight: bold;
