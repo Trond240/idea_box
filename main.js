@@ -3,7 +3,6 @@ var bodyInput = document.querySelector('.body-input');
 var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section');
-var card = null;
 var ideaArray = [];
 
 
@@ -31,10 +30,10 @@ function clearInputs() {
 
 function createIdea() {
   // for (var i = 0; i < ideas.length; i++) {
-  card = new Idea(Date.now(), titleInput.value, bodyInput.value);
-  ideaArray.push(card);
-  showIdea(card);
-  card.saveToStorage();
+  var newCard = new Idea(Date.now(), titleInput.value, bodyInput.value);
+  ideaArray.push(newCard);
+  showIdea(newCard);
+  newCard.saveToStorage();
 }
 
 
