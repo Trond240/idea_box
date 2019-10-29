@@ -67,7 +67,16 @@ function showIdea(card) {
 
 function cardHandler(event) {
   if (event.target.classList.contains('delete-btn')) {
-    console.log(event);
+// Get id from event
+    var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
+// Grab idea class
+    var card = null;
+    for (var i = 0; i < ideaArray.length; i++) {
+      if (cardId === ideaArray[i].id) {
+        card = ideaArray[i];
+      }
+    }
+
     event.target.parentNode.parentNode.remove();
     card.deleteFromStorage(event);
   }
