@@ -3,6 +3,7 @@ var bodyInput = document.querySelector('.body-input');
 var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section');
+var leftSide = document.querySelector('aside');
 var ideaArray = [];
 
 
@@ -10,13 +11,15 @@ window.onload = displayLocalStorageCards();
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
 cardsContainer.addEventListener('click', cardHandler);
+leftSide.addEventListener('click', toggleMenu)
 
 // ********** Begining of formhandler and card functions ************ //
 
 function formHandler(event) {
   event.preventDefault();
   if (event.target.classList.contains('save')) {
-    createIdea();
+    var newCard = createIdea(Date.now(), titleInput.value, bodyInput.value);
+    newCard.saveToStorage();
     clearInputs();
   }
 }
@@ -28,18 +31,17 @@ function clearInputs() {
   saveButton.classList.remove('active-save-btn');
 }
 
-function createIdea() {
-  // for (var i = 0; i < ideas.length; i++) {
-  var newCard = new Idea(Date.now(), titleInput.value, bodyInput.value);
+function createIdea(id, title, body) {
+  var newCard = new Idea(id, title, body)
   ideaArray.push(newCard);
   showIdea(newCard);
-  newCard.saveToStorage();
+  return newCard;
 }
 
 
 function saveButtonToggle() {
   event.preventDefault();
-  if(titleInput.value !== '' && bodyInput.value !== '') {
+  if(titleInput.value && bodyInput.value) {
     saveButton.classList.add('active-save-btn');
     saveButton.disabled = false;
   }
@@ -67,9 +69,7 @@ function showIdea(card) {
 
 function cardHandler(event) {
   if (event.target.classList.contains('delete-btn')) {
-// Get id from event
     var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
-// Grab idea class
     var card = null;
     for (var i = 0; i < ideaArray.length; i++) {
       if (cardId === ideaArray[i].id) {
@@ -99,11 +99,9 @@ function displayLocalStorageCards() {
   var fromStorage = retrieveIdeas();
   if (localStorage.getItem("ideaLocalStorage") === null) {
     ideaArray = [];
-  }else{
+  } else {
     for (var i = 0; i < fromStorage.length; i++) {
-    var localStorageCard = new Idea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred);
-    showIdea(localStorageCard);
-    ideaArray.push(localStorageCard);
+      createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
     }
   }
 }
