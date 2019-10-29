@@ -3,7 +3,6 @@ var bodyInput = document.querySelector('.body-input');
 var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section');
-var card = null;
 var ideaArray = [];
 
 
@@ -31,10 +30,10 @@ function clearInputs() {
 
 function createIdea() {
   // for (var i = 0; i < ideas.length; i++) {
-  card = new Idea(titleInput.value, bodyInput.value, Date.now());
-  ideaArray.push(card);
-  showIdea(card);
-  card.saveToStorage();
+  var newCard = new Idea(Date.now(), titleInput.value, bodyInput.value);
+  ideaArray.push(newCard);
+  showIdea(newCard);
+  newCard.saveToStorage();
 }
 
 
@@ -48,7 +47,7 @@ function saveButtonToggle() {
 
 function showIdea(card) {
   cardsContainer.insertAdjacentHTML('beforeend',
-  `<article class='cards'>
+  `<article class='cards' data-id='${card.id}'>
     <div class='card-header'>
       <button class='card-btns disable-favorite-btn'></button>
       <button class='card-btns delete-btn'></button>
@@ -68,13 +67,26 @@ function showIdea(card) {
 
 function cardHandler(event) {
   if (event.target.classList.contains('delete-btn')) {
+// Get id from event
+    var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
+// Grab idea class
+    var card = null;
+    for (var i = 0; i < ideaArray.length; i++) {
+      if (cardId === ideaArray[i].id) {
+        card = ideaArray[i];
+      }
+    }
+
     event.target.parentNode.parentNode.remove();
+    card.deleteFromStorage(event);
   }
   if (event.target.classList.contains('disable-favorite-btn')) {
     event.target.classList.toggle('active-favorite-btn');
     card.starred = !card.starred;
   }
 }
+
+
 
 function retrieveIdeas() {
   var getIdeas = localStorage.getItem("ideaLocalStorage");
@@ -83,12 +95,13 @@ function retrieveIdeas() {
 }
 
 function displayLocalStorageCards() {
+  console.log(localStorage.key)
   var fromStorage = retrieveIdeas();
   if (localStorage.getItem("ideaLocalStorage") === null) {
     ideaArray = [];
   }else{
     for (var i = 0; i < fromStorage.length; i++) {
-    var localStorageCard = new Idea(fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred, fromStorage[i].id);
+    var localStorageCard = new Idea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred);
     showIdea(localStorageCard);
     ideaArray.push(localStorageCard);
     }
