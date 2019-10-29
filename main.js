@@ -39,9 +39,12 @@ function createIdea() {
 
 function saveButtonToggle() {
   event.preventDefault();
-  if(titleInput.value !== '' && bodyInput.value !== '') {
+  if(titleInput.value && bodyInput.value) {
     saveButton.classList.add('active-save-btn');
     saveButton.disabled = false;
+  } else {
+    saveButton.classList.remove('active-save-btn');
+    saveButton.disabled = true;
   }
 }
 
