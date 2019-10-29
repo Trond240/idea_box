@@ -112,7 +112,7 @@ function displayLocalStorageCards() {
 function asideHandler(event) {
   if (event.target.classList.contains("mobile-menu-inactive")) {
     event.target.classList.toggle("mobile-menu-active");
-    // event.path[1].children[2].style.display = "block";
+    event.path[1].children[2].classList.toggle("starred-ideas-active");
     console.log(event);
   }
 }
