@@ -6,7 +6,6 @@ var cardsContainer = document.querySelector('.card-section');
 var leftSide = document.querySelector('aside');
 var ideaArray = [];
 
-
 window.onload = displayLocalStorageCards();
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
@@ -31,6 +30,7 @@ function clearInputs() {
   saveButton.classList.remove('active-save-btn');
 }
 
+
 function createIdea(id, title, body) {
   var newCard = new Idea(id, title, body)
   ideaArray.push(newCard);
@@ -38,12 +38,14 @@ function createIdea(id, title, body) {
   return newCard;
 }
 
-
 function saveButtonToggle() {
   event.preventDefault();
   if(titleInput.value && bodyInput.value) {
     saveButton.classList.add('active-save-btn');
     saveButton.disabled = false;
+  } else {
+    saveButton.classList.remove('active-save-btn');
+    saveButton.disabled = true;
   }
 }
 
@@ -86,8 +88,6 @@ function cardHandler(event) {
   }
 }
 
-
-
 function retrieveIdeas() {
   var getIdeas = localStorage.getItem("ideaLocalStorage");
   var parsedIdeas = JSON.parse(getIdeas);
@@ -95,7 +95,6 @@ function retrieveIdeas() {
 }
 
 function displayLocalStorageCards() {
-  console.log(localStorage.key)
   var fromStorage = retrieveIdeas();
   if (localStorage.getItem("ideaLocalStorage") === null) {
     ideaArray = [];
