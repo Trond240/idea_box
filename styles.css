@@ -265,10 +265,14 @@ textarea {
   }
 
   .starred-ideas-div {
-    display: inline-flex;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+  }
+
+  .starred-ideas-active {
+    display: inline-flex;
   }
 
   .starred-ideas-div p {
