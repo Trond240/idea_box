@@ -17,12 +17,8 @@ class Idea {
 
   deleteFromStorage(event) {
     var fromStorage = retrieveIdeas();
-    var selectedCard = event.target.parentElement.parentNode.attributes.class.ownerElement.dataset.id;
-    for (var i = 0; i < fromStorage.length; i++) {
-      if (selectedCard === fromStorage[i].id) {
-        localStorage.removeItem("ideaLocalStorage[i].id");
-      }
-    }
+    var selectedCard = this.id;
+    console.log(selectedCard);
   }
 }
 
