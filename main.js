@@ -3,12 +3,14 @@ var bodyInput = document.querySelector('.body-input');
 var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section');
+var filterAside = document.querySelector('.filter-aside');
 var ideaArray = [];
 
 window.onload = displayLocalStorageCards();
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
 cardsContainer.addEventListener('click', cardHandler);
+filterAside.addEventListener('click', asideHandler);
 
 // ********** Begining of formhandler and card functions ************ //
 
@@ -103,4 +105,10 @@ function displayLocalStorageCards() {
     ideaArray.push(localStorageCard);
     }
   }
+}
+
+// ********** Aside Handler and Functions ********** //
+
+function asideHandler() {
+  
 }
