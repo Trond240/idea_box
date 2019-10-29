@@ -5,7 +5,6 @@ var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section');
 var ideaArray = [];
 
-
 window.onload = displayLocalStorageCards();
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
@@ -29,13 +28,11 @@ function clearInputs() {
 }
 
 function createIdea() {
-  // for (var i = 0; i < ideas.length; i++) {
   var newCard = new Idea(Date.now(), titleInput.value, bodyInput.value);
   ideaArray.push(newCard);
   showIdea(newCard);
   newCard.saveToStorage();
 }
-
 
 function saveButtonToggle() {
   event.preventDefault();
@@ -89,8 +86,6 @@ function cardHandler(event) {
   }
 }
 
-
-
 function retrieveIdeas() {
   var getIdeas = localStorage.getItem("ideaLocalStorage");
   var parsedIdeas = JSON.parse(getIdeas);
@@ -98,7 +93,6 @@ function retrieveIdeas() {
 }
 
 function displayLocalStorageCards() {
-  console.log(localStorage.key)
   var fromStorage = retrieveIdeas();
   if (localStorage.getItem("ideaLocalStorage") === null) {
     ideaArray = [];
