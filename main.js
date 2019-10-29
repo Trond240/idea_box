@@ -3,14 +3,14 @@ var bodyInput = document.querySelector('.body-input');
 var saveButton = document.querySelector('.save');
 var formSection = document.querySelector('.form-section');
 var cardsContainer = document.querySelector('.card-section');
-var leftSide = document.querySelector('aside');
+var filterAside = document.querySelector('.filter-aside');
 var ideaArray = [];
 
 window.onload = displayLocalStorageCards();
 formSection.addEventListener('keyup', saveButtonToggle);
 formSection.addEventListener('click', formHandler);
 cardsContainer.addEventListener('click', cardHandler);
-leftSide.addEventListener('click', toggleMenu)
+filterAside.addEventListener('click', asideHandler);
 
 // ********** Begining of formhandler and card functions ************ //
 
@@ -102,5 +102,14 @@ function displayLocalStorageCards() {
     for (var i = 0; i < fromStorage.length; i++) {
       createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
     }
+  }
+}
+
+// ********** Aside Handler and Functions ********** //
+
+function asideHandler(event) {
+  if (event.target.classList.contains("mobile-menu-inactive")) {
+    event.target.classList.toggle("mobile-menu-active");
+    event.path[1].children[2].classList.toggle("starred-ideas-active");
   }
 }

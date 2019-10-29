@@ -27,14 +27,14 @@ aside h1 {
   padding: 15px;
 }
 
-#starred-ideas-div {
+.starred-ideas-div {
   border-top: 2px solid #353567;
   border-bottom: 2px solid #353567;
   display: flex;
   flex-flow: column nowrap;
 }
 
-#starred-ideas-div p {
+.starred-ideas-div p {
   padding: 15px;
   color: #BFBFDD;
   font-weight: bold;
@@ -265,7 +265,7 @@ textarea {
 
   aside {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-start;
   }
 
@@ -274,13 +274,26 @@ textarea {
     padding-right: 50px;
   }
 
-  #starred-ideas-div {
+  .starred-ideas-div {
     display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .starred-ideas-active {
+    display: inline-flex;
+  }
+
+  .starred-ideas-div p {
+    width: 90%;
+    margin: 1em;
   }
 
   .mobile-menu-inactive {
     background: url(./assets/menu.svg) no-repeat center/100%;
     border: none;
+    cursor: pointer;
     display: flex;
     outline: 0;
     width: 50px;
@@ -288,8 +301,7 @@ textarea {
   }
 
   .mobile-menu-active {
-    background: url(./assets/menu-close.svg);
-    cursor: pointer;
+    background: url(./assets/menu-close.svg) no-repeat center/100%;
   }
 
   .form-section {
