@@ -55,6 +55,10 @@ aside h1 {
   cursor: pointer;
 }
 
+.hidden {
+  display: none;
+}
+
 /* ********** MAIN ********** */
 
 main {
@@ -165,7 +169,7 @@ textarea {
 .cards {
   background-color: #FFF;
   border-radius: 2px;
-  border: 2px solid black;
+  border: 2px solid #1F1F3D;
   margin: 20px;
   width: 300px;
 }
@@ -217,6 +221,7 @@ textarea {
   background-color: #5354A4;
   display: flex;
   height: 30px;
+  border-top: 1px solid #1F1F3D;
 }
 
 .comment-btn {
@@ -279,10 +284,12 @@ textarea {
     display: flex;
     outline: 0;
     width: 50px;
+    cursor: pointer;
   }
 
   .mobile-menu-active {
     background: url(./assets/menu-close.svg);
+    cursor: pointer;
   }
 
   .form-section {
