@@ -17,7 +17,8 @@ filterAside.addEventListener('click', asideHandler);
 function formHandler(event) {
   event.preventDefault();
   if (event.target.classList.contains('save')) {
-    createIdea();
+    var newCard = createIdea(Date.now(), titleInput.value, bodyInput.value);
+    newCard.saveToStorage();
     clearInputs();
   }
 }
@@ -29,11 +30,12 @@ function clearInputs() {
   saveButton.classList.remove('active-save-btn');
 }
 
-function createIdea() {
-  var newCard = new Idea(Date.now(), titleInput.value, bodyInput.value);
+
+function createIdea(id, title, body) {
+  var newCard = new Idea(id, title, body)
   ideaArray.push(newCard);
   showIdea(newCard);
-  newCard.saveToStorage();
+  return newCard;
 }
 
 function saveButtonToggle() {
@@ -69,9 +71,7 @@ function showIdea(card) {
 
 function cardHandler(event) {
   if (event.target.classList.contains('delete-btn')) {
-// Get id from event
     var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
-// Grab idea class
     var card = null;
     for (var i = 0; i < ideaArray.length; i++) {
       if (cardId === ideaArray[i].id) {
@@ -100,9 +100,7 @@ function displayLocalStorageCards() {
     ideaArray = [];
   } else {
     for (var i = 0; i < fromStorage.length; i++) {
-    var localStorageCard = new Idea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred);
-    showIdea(localStorageCard);
-    ideaArray.push(localStorageCard);
+      createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
     }
   }
 }
