@@ -98,7 +98,7 @@ function displayLocalStorageCards() {
   var fromStorage = retrieveIdeas();
   if (localStorage.getItem("ideaLocalStorage") === null) {
     ideaArray = [];
-  }else{
+  } else {
     for (var i = 0; i < fromStorage.length; i++) {
     var localStorageCard = new Idea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred);
     showIdea(localStorageCard);
@@ -109,6 +109,10 @@ function displayLocalStorageCards() {
 
 // ********** Aside Handler and Functions ********** //
 
-function asideHandler() {
-  
+function asideHandler(event) {
+  if (event.target.classList.contains("mobile-menu-inactive")) {
+    event.target.classList.toggle("mobile-menu-active");
+    // event.path[1].children[2].style.display = "block";
+    console.log(event);
+  }
 }
