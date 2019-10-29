@@ -67,7 +67,7 @@ main {
   background-color: #A9AAD2;
   display: flex;
   justify-content: center;
-  margin-left: 1px;
+  margin-left: 2px;
   width: 100%;
 }
 
@@ -229,20 +229,25 @@ textarea {
 
 /* *********** MEDIA QUERIES ********** */
 
-@media screen and (max-width: 875px) {
+@media screen and (max-width: 54em) {
 
   .form-section form {
-    width: 70%;
-    min-width: 0;
+    width: 75%;
+    min-width: 450px;
+  }
+
+  .card-section {
+    justify-content: center;
   }
 
   .cards {
-    width: 100%;
+    width: 60%;
+    min-width: 280px;
   }
 
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 36em) {
 
   body {
     flex-flow: column nowrap;
@@ -272,7 +277,6 @@ textarea {
     background: url(./assets/menu.svg) no-repeat center/100%;
     border: none;
     display: flex;
-    justify-self: flex-start;
     outline: 0;
     width: 50px;
   }
@@ -281,8 +285,17 @@ textarea {
     background: url(./assets/menu-close.svg);
   }
 
+  .form-section {
+    margin-left: 0px;
+  }
+
   .form-section form {
     width: 95%;
+    min-width: 100px;
+  }
+
+  .cards {
+    width: 65%;
   }
 
 }
