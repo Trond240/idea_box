@@ -110,16 +110,27 @@ function displayLocalStorageCards() {
       createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
     }
   }
-  setFavoriteStyle(ideaArray);
+  // setFavoriteStyle(ideaArray);
 }
 
-function setFavoriteStyle(ary) {
-  for (var i = 0; i < ary.length; i++) {
-    if (ary[i].starred === true) {
-      console.log(ary[i]);
+function checkCardID(event) {
+      var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
+    var card = null;
+    for (var i = 0; i < ideaArray.length; i++) {
+      if (cardId === ideaArray[i].id) {
+        card = ideaArray[i];
+      }
     }
-  }
 }
+
+
+// function setFavoriteStyle(ary) {
+//   for (var i = 0; i < ary.length; i++) {
+//     if (ary[i].starred === true) {
+//       console.log(ary[i]);
+//     }
+//   }
+// }
 
 // ********** Aside Handler and Functions ********** //
 
