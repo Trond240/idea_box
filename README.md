@@ -36,7 +36,7 @@
  
  * Grayson Palmer
  
- * Trista Holtz
+ * Tristan Holtz
  
  * Trond Makonese
 
@@ -44,12 +44,12 @@
 
 * Grayson Palmer
  
- * Trista Holtz
+ * Tristan Holtz
  
  * Trond Makonese
  
 ## Authors
 
 * Grayson Palmer
-* Trista Holtz
+* Tristan Holtz
 * Trond Makonese
