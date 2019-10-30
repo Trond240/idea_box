@@ -42,6 +42,7 @@
  * Tristan Holtz
  
  * Trond Makonese
+  - I had some challeneges when it came to pulling items out of local link. Leaving this project I feel i have a stronger understanding of local link. Pulling items out and targeting them by id in order to starr or delte was very tricky.
 
 ### Wins!!!
 
@@ -51,6 +52,7 @@
  * Tristan Holtz
  
  * Trond Makonese
+  - Working with this team right off the back was a win for me. Also walking away with better skills with writing dry code and understaning how you can refactor was really helpful for my learning. I'm a very hands on learner and I felt I was able to contribute and be apart of the team.  
  
 ## Authors
 
