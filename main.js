@@ -71,25 +71,26 @@ function showIdea(card) {
 
 function cardHandler(event) {
   if (event.target.classList.contains('delete-btn')) {
-    var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
-    var card = null;
-    for (var i = 0; i < ideaArray.length; i++) {
-      if (cardId === ideaArray[i].id) {
-        card = ideaArray[i];
-      }
-    }
-
+    // var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
+    // var card = null;
+    // for (var i = 0; i < ideaArray.length; i++) {
+    //   if (cardId === ideaArray[i].id) {
+    //     card = ideaArray[i];
+    //   }
+    // }
+    var card = checkCardID(event);
     event.target.parentNode.parentNode.remove();
     card.deleteFromStorage();
   }
   if (event.target.classList.contains('disable-favorite-btn')) {
-    var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
-    var card = null;
-    for (var i = 0; i < ideaArray.length; i++) {
-      if (cardId === ideaArray[i].id) {
-        card = ideaArray[i];
-      }
-    }
+    // var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
+    // var card = null;
+    // for (var i = 0; i < ideaArray.length; i++) {
+    //   if (cardId === ideaArray[i].id) {
+    //     card = ideaArray[i];
+    //   }
+    // }
+    var card = checkCardID(event);
     event.target.classList.toggle('active-favorite-btn');
     card.updateIdea();
   }
@@ -114,13 +115,14 @@ function displayLocalStorageCards() {
 }
 
 function checkCardID(event) {
-      var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
-    var card = null;
-    for (var i = 0; i < ideaArray.length; i++) {
-      if (cardId === ideaArray[i].id) {
-        card = ideaArray[i];
-      }
+  var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
+  var card = null;
+  for (var i = 0; i < ideaArray.length; i++) {
+    if (cardId === ideaArray[i].id) {
+      card = ideaArray[i];
     }
+  }
+  return card;
 }
 
 
