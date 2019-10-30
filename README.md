@@ -13,7 +13,7 @@
 
 ### OverView of Site
 
-* The site is a useful tool for users who would like to keep track of their Ideas and make future notes, flag favorite ideas by clicking the starred icon, and deleting unwanted ideas.
+* The site is a useful tool for users who would like to log their ideas.
 
 * Users will have two input feilds with the labels of title and body for creating the ideas.
 
