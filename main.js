@@ -111,7 +111,6 @@ function checkCardID(event) {
   return card;
 }
 
-
 function setFavoriteStyle(window) {
   var cardId = window.cardsContainer.children;
   var storageIdeas = retrieveIdeas();
