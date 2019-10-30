@@ -47,7 +47,7 @@ aside h1 {
   width: 90%;
   align-self: center;
   margin: 15px 0px 30px;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 22px;
   font-weight: bold;
   border: 2px solid #353567;
@@ -113,11 +113,13 @@ textarea {
 
 input {
   padding: 10px;
+  border-radius: 4px;
 }
 
 textarea {
   height: 100px;
   overflow: scroll;
+  border-radius: 4px;
 }
 
 .save {
@@ -126,6 +128,7 @@ textarea {
   font-size: 24px;
   font-family: 'Open sans';
   font-weight: bold;
+  border-radius: 4px;
 }
 
 .disable-save-btn {
@@ -140,6 +143,7 @@ textarea {
 #search-box {
   display: flex;
   margin-bottom: 30px;
+  border-radius: 4px;
 }
 
 #search-box * {
