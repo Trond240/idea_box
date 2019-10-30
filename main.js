@@ -80,11 +80,18 @@ function cardHandler(event) {
     }
 
     event.target.parentNode.parentNode.remove();
-    card.deleteFromStorage(event);
+    card.deleteFromStorage();
   }
   if (event.target.classList.contains('disable-favorite-btn')) {
+    var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
+    var card = null;
+    for (var i = 0; i < ideaArray.length; i++) {
+      if (cardId === ideaArray[i].id) {
+        card = ideaArray[i];
+      }
+    }
     event.target.classList.toggle('active-favorite-btn');
-    card.starred = !card.starred;
+    card.updateIdea();
   }
 }
 
