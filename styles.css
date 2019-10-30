@@ -138,15 +138,15 @@ textarea {
 
 .save.active-save-btn {
   background-color: #353567;
-  cursor: pointer;
   border: 2px solid #5356A4;
+  cursor: pointer;
 }
 
 #search-box {
-  display: flex;
-  margin-bottom: 30px;
   border-radius: 4px;
+  display: flex;
   height: 60px;
+  margin-bottom: 30px;
 }
 
 #search-box * {
@@ -155,15 +155,15 @@ textarea {
 
 #search-box button {
   background: #353567 url(./assets/search.svg) no-repeat center/50%;
-  width: 10%;
-  min-width: 45px;
   border: none;
   cursor: pointer;
+  min-width: 45px;
+  width: 10%;
 }
 
 #search-box input {
-  width: 90%;
   border: none;
+  width: 90%;
 }
 
 /* ********** CARD SECTION ********** */
@@ -232,9 +232,9 @@ textarea {
 .card-footer {
   align-items: center;
   background-color: #5354A4;
+  border-top: 1px solid #1F1F3D;
   display: flex;
   height: 35px;
-  border-top: 1px solid #1F1F3D;
 }
 
 .comment-btn {
@@ -250,8 +250,8 @@ textarea {
 @media screen and (max-width: 54em) {
 
   .form-section form {
-    width: 75%;
     min-width: 450px;
+    width: 75%;
   }
 
   .card-section {
@@ -259,8 +259,8 @@ textarea {
   }
 
   .cards {
-    width: 60%;
     min-width: 280px;
+    width: 60%;
   }
 
 }
@@ -269,7 +269,6 @@ textarea {
 
   body {
     flex-flow: column nowrap;
-    z-index: 1;
   }
 
   aside,
@@ -292,11 +291,11 @@ textarea {
   }
 
   .starred-ideas-div {
+    background-color: #1F1F3D;
     display: none;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    background-color: #1F1F3D;
   }
 
   .starred-ideas-active {
@@ -304,8 +303,8 @@ textarea {
   }
 
   .starred-ideas-div p {
-    width: 90%;
     margin: 1em;
+    width: 90%;
   }
 
   .mobile-menu-inactive {
@@ -315,7 +314,6 @@ textarea {
     display: flex;
     outline: 0;
     width: 50px;
-    cursor: pointer;
   }
 
   .mobile-menu-active {
@@ -327,14 +325,14 @@ textarea {
   }
 
   .form-section form {
-    width: 95%;
     min-width: 100px;
+    width: 95%;
   }
 
   .cards {
-    width: 65%;
     margin: 10px;
     min-width: 300px;
+    width: 65%;
   }
 
   .card-section {
