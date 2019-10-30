@@ -35,24 +35,24 @@ aside h1 {
 }
 
 .starred-ideas-div p {
-  padding: 15px;
   color: #BFBFDD;
   font-weight: bold;
+  padding: 15px;
 }
 
 #show-starred-idea-btn {
-  background-color: #5356A4;
-  color: #E9E9F3;
-  padding: 12px;
-  width: 90%;
   align-self: center;
-  margin: 15px 0px 30px;
-  border-radius: 2px;
+  background-color: #5356A4;
+  border-radius: 4px;
+  border: 2px solid #353567;
+  color: #E9E9F3;
+  cursor: pointer;
   font-size: 22px;
   font-weight: bold;
-  border: 2px solid #353567;
   font-family: 'Open sans';
-  cursor: pointer;
+  margin: 15px 0px 30px;
+  padding: 12px;
+  width: 90%;
 }
 
 .hidden {
@@ -79,6 +79,7 @@ main {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  margin-top: 20px;
   min-width: 500px;
   width: 50%;
 }
@@ -100,8 +101,8 @@ main {
 }
 
 label {
-  font-size: 18px;
   color: #1F1F3D;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -112,17 +113,20 @@ textarea {
 }
 
 input {
+  border-radius: 4px;
   padding: 10px;
 }
 
 textarea {
+  border-radius: 4px;
   height: 100px;
   overflow: scroll;
 }
 
 .save {
+  border-radius: 4px;
   color: #BFBFDD;
-  padding: 16px;
+  padding: 12px;
   font-size: 24px;
   font-family: 'Open sans';
   font-weight: bold;
@@ -132,13 +136,16 @@ textarea {
   background-color: #585759;
 }
 
-.active-save-btn {
+.save.active-save-btn {
   background-color: #353567;
+  border: 2px solid #5356A4;
   cursor: pointer;
 }
 
 #search-box {
+  border-radius: 4px;
   display: flex;
+  height: 60px;
   margin-bottom: 30px;
 }
 
@@ -148,14 +155,15 @@ textarea {
 
 #search-box button {
   background: #353567 url(./assets/search.svg) no-repeat center/50%;
-  width: 8.5%;
   border: none;
   cursor: pointer;
+  min-width: 45px;
+  width: 10%;
 }
 
 #search-box input {
-  width: 91.5%;
   border: none;
+  width: 90%;
 }
 
 /* ********** CARD SECTION ********** */
@@ -164,6 +172,7 @@ textarea {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  padding: 20px;
 }
 
 .cards {
@@ -171,31 +180,34 @@ textarea {
   border-radius: 2px;
   border: 2px solid #1F1F3D;
   margin: 20px;
-  width: 300px;
+  width: 330px;
 }
 
 .cards h2 {
-  margin: 15px;
+  color: #1F1F3D;
+  font-size: 24px;
+  margin: 10px;
 }
 
 .cards p {
-  font-size: 20px;
-  margin-right: 15px;
+  color: #1F1F3D;
+  font-size: 24px;
+  margin-right: 16px;
   padding: 0px 15px 15px;
 }
 
 .card-header {
   background-color: #1F1F3D;
   display: flex;
-  height: 30px;
+  height: 35px;
   justify-content: space-between;
 }
 
 .card-btns {
   border: none;
+  cursor: pointer;
   height: 30px;
   outline: 0px;
-  cursor: pointer;
   width: 30px;
 }
 
@@ -212,16 +224,17 @@ textarea {
 }
 
 .card-content {
-  height: 200px;
+  height: 275px;
   overflow: scroll;
+  padding: 10px;
 }
 
 .card-footer {
   align-items: center;
   background-color: #5354A4;
-  display: flex;
-  height: 30px;
   border-top: 1px solid #1F1F3D;
+  display: flex;
+  height: 35px;
 }
 
 .comment-btn {
@@ -237,8 +250,8 @@ textarea {
 @media screen and (max-width: 54em) {
 
   .form-section form {
-    width: 75%;
     min-width: 450px;
+    width: 75%;
   }
 
   .card-section {
@@ -246,8 +259,8 @@ textarea {
   }
 
   .cards {
-    width: 60%;
     min-width: 280px;
+    width: 60%;
   }
 
 }
@@ -267,6 +280,9 @@ textarea {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+    height: 70px;
+    position: relative;
+    z-index: 10;
   }
 
   aside h1 {
@@ -275,6 +291,7 @@ textarea {
   }
 
   .starred-ideas-div {
+    background-color: #1F1F3D;
     display: none;
     flex-wrap: wrap;
     justify-content: center;
@@ -286,8 +303,8 @@ textarea {
   }
 
   .starred-ideas-div p {
-    width: 90%;
     margin: 1em;
+    width: 90%;
   }
 
   .mobile-menu-inactive {
@@ -297,7 +314,6 @@ textarea {
     display: flex;
     outline: 0;
     width: 50px;
-    cursor: pointer;
   }
 
   .mobile-menu-active {
@@ -309,12 +325,22 @@ textarea {
   }
 
   .form-section form {
-    width: 95%;
     min-width: 100px;
+    width: 95%;
   }
 
   .cards {
+    margin: 10px;
+    min-width: 300px;
     width: 65%;
+  }
+
+  .card-section {
+    padding: 10px;
+  }
+
+  .gray-scale {
+    filter: opacity(50%);
   }
 
 }
