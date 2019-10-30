@@ -97,11 +97,13 @@ function displayLocalStorageCards() {
       createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
     }
   }
-  // setFavoriteStyle(ideaArray);
+  // console.log(window);
+  // console.log(window.cardsContainer.children[0])
+  // console.log(window.cardsContainer.children["0"].children["0"].children["0"].classList)
 }
 
 function checkCardID(event) {
-  var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
+  var cardId = JSON.parse(event.path[2].dataset.id);
   var card = null;
   for (var i = 0; i < ideaArray.length; i++) {
     if (cardId === ideaArray[i].id) {
