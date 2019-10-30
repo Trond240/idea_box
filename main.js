@@ -110,6 +110,15 @@ function displayLocalStorageCards() {
       createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
     }
   }
+  setFavoriteStyle(ideaArray);
+}
+
+function setFavoriteStyle(ary) {
+  for (var i = 0; i < ary.length; i++) {
+    if (ary[i].starred === true) {
+      console.log(ary[i]);
+    }
+  }
 }
 
 // ********** Aside Handler and Functions ********** //
