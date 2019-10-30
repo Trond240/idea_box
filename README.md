@@ -1,6 +1,6 @@
 # Idea Box
 
-## A project by 2 mod 1 students at Turing School of Software & Design
+## A project by 3 mod 1 students at Turing School of Software & Design
 
 ### Learning Goals
 
@@ -17,8 +17,37 @@
 
 ### Technologies used
 
+  * Atom
+  * DEV Tools (including debugger)
+  * Terminal
+
 ### Challenges
+
+ 
+ * Grayson Palmer
+ - 
+ 
+ * Trista Holtz
+ - 
+ 
+ * Trond Makonese
+ -
+
 
 ### Wins!!!
 
+* Grayson Palmer
+ - 
+ 
+ * Trista Holtz
+ - 
+ 
+ * Trond Makonese
+ -
+
+
 ## Authors
+
+* Grayson Palmer
+* Trista Holtz
+* Trond Makonese
