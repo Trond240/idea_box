@@ -13,6 +13,16 @@
 
 ### OverView of Site
 
+* The site is a useful tool for users who would like to keep track of their Ideas and make future notes, flag favorite ideas by clicking the starred icon, and deleting unwanted ideas.
+
+* Users will have two inout feilds with the labels of title and body for creating the ideas.
+
+* Once input feilds are filled out the user can click the save button which will creat an instance of an idea card.(multiple cards can be created)
+
+* Once cards are created the user will have the option to either comment, star (favorite), or delte the card from the list completely.
+
+* Future iterations will allow the user to show only starred ideas and the ability to search for spacific ideas that have been created.
+
 ### The Comp Recreation 
 
 ### Technologies used
@@ -25,27 +35,19 @@
 
  
  * Grayson Palmer
- - 
  
  * Trista Holtz
- - 
  
  * Trond Makonese
- -
-
 
 ### Wins!!!
 
 * Grayson Palmer
- - 
  
  * Trista Holtz
- - 
  
  * Trond Makonese
- -
-
-
+ 
 ## Authors
 
 * Grayson Palmer
