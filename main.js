@@ -118,5 +118,6 @@ function asideHandler(event) {
   if (event.target.classList.contains("mobile-menu-inactive")) {
     event.target.classList.toggle("mobile-menu-active");
     event.path[1].children[2].classList.toggle("starred-ideas-active");
+    event.target.parentNode.parentNode.children[1].classList.toggle("gray-scale");
   }
 }
