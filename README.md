@@ -19,9 +19,11 @@
 
 * Once input feilds are filled out the user can click the save button which will creat an instance of an idea card.(multiple cards can be created)
 
-* Once cards are created the user will have the option to either comment, star (favorite), or delte the card from the list completely.
+* Once cards are created the user will have the option to either comment, star (favorite), or delete the card from the list completely.
 
-* Future iterations will allow the user to show only starred ideas and the ability to search for spacific ideas that have been created.
+* Changes made to the cards will be stored in local storage, and the change will persist through a page refresh.
+
+* Future iterations will allow the user to show only starred ideas and the ability to search for specific ideas that have been created.
 
 ### The Comp Recreation 
 
@@ -35,6 +37,7 @@
 
  
  * Grayson Palmer
+  - I had some challenges when it came to navigating the event paths. I feel like I understand it a lot better now, and how to simplify/refactor paths to be shorter and more simplistic. Local Storage was another really challenging component, especially manipulating it and reading back those manipulations on load (re: favorite button).
  
  * Tristan Holtz
  
@@ -42,7 +45,8 @@
 
 ### Wins!!!
 
-* Grayson Palmer
+ * Grayson Palmer
+  - I think we really nailed the comp and making it look good at multiple screen sizes. Coming out the other side of Local Storage struggles was also a big win in my book. I also feel we didn't just get things functioning correctly, I feel we did so in a very dry and succinct way. We definitely leveraged roll up functions to try and make it so each function only handled a single piece of the puzzle. 
  
  * Tristan Holtz
  
