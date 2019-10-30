@@ -96,11 +96,8 @@ function displayLocalStorageCards() {
     for (var i = 0; i < fromStorage.length; i++) {
       createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
     }
+    setFavoriteStyle(window);
   }
-  // console.log(window);
-  setFavoriteStyle(window);
-  // console.log(window.cardsContainer.children)
-  // console.log(window.cardsContainer.children["0"].children["0"].children["0"].classList)
 }
 
 function checkCardID(event) {
