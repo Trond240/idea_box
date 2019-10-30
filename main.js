@@ -98,7 +98,8 @@ function displayLocalStorageCards() {
     }
   }
   // console.log(window);
-  // console.log(window.cardsContainer.children[0])
+  setFavoriteStyle(window);
+  // console.log(window.cardsContainer.children)
   // console.log(window.cardsContainer.children["0"].children["0"].children["0"].classList)
 }
 
@@ -114,13 +115,15 @@ function checkCardID(event) {
 }
 
 
-// function setFavoriteStyle(ary) {
-//   for (var i = 0; i < ary.length; i++) {
-//     if (ary[i].starred === true) {
-//       console.log(ary[i]);
-//     }
-//   }
-// }
+function setFavoriteStyle(window) {
+  var cardId = window.cardsContainer.children;
+  var storageIdeas = retrieveIdeas();
+  for (var i = 0; i < storageIdeas.length; i++) {
+    if (storageIdeas[i].starred === true) {
+      cardId[i].children[0].children[0].classList.toggle('active-favorite-btn');
+    }
+  }
+}
 
 // ********** Aside Handler and Functions ********** //
 
