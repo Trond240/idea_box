@@ -94,7 +94,7 @@ function displayLocalStorageCards() {
     ideaArray = [];
   } else {
     for (var i = 0; i < fromStorage.length; i++) {
-      createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
+      createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body)
     }
     setFavoriteStyle(window);
   }
@@ -111,7 +111,7 @@ function checkCardID(event) {
   return card;
 }
 
-function setFavoriteStyle(window) {
+function setFavoriteStyle() {
   var cardId = window.cardsContainer.children;
   var storageIdeas = retrieveIdeas();
   for (var i = 0; i < storageIdeas.length; i++) {
