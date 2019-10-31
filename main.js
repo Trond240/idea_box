@@ -71,25 +71,12 @@ function showIdea(card) {
 
 function cardHandler(event) {
   if (event.target.classList.contains('delete-btn')) {
-    var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
-    var card = null;
-    for (var i = 0; i < ideaArray.length; i++) {
-      if (cardId === ideaArray[i].id) {
-        card = ideaArray[i];
-      }
-    }
-
+    var card = checkCardID(event);
     event.target.parentNode.parentNode.remove();
     card.deleteFromStorage();
   }
   if (event.target.classList.contains('disable-favorite-btn')) {
-    var cardId = JSON.parse(event.target.parentNode.parentNode.dataset.id);
-    var card = null;
-    for (var i = 0; i < ideaArray.length; i++) {
-      if (cardId === ideaArray[i].id) {
-        card = ideaArray[i];
-      }
-    }
+    var card = checkCardID(event);
     event.target.classList.toggle('active-favorite-btn');
     card.updateIdea();
   }
@@ -107,7 +94,29 @@ function displayLocalStorageCards() {
     ideaArray = [];
   } else {
     for (var i = 0; i < fromStorage.length; i++) {
-      createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body, fromStorage[i].starred)
+      createIdea(fromStorage[i].id, fromStorage[i].title, fromStorage[i].body)
+    }
+    setFavoriteStyle(window);
+  }
+}
+
+function checkCardID(event) {
+  var cardId = JSON.parse(event.path[2].dataset.id);
+  var card = null;
+  for (var i = 0; i < ideaArray.length; i++) {
+    if (cardId === ideaArray[i].id) {
+      card = ideaArray[i];
+    }
+  }
+  return card;
+}
+
+function setFavoriteStyle() {
+  var cardId = window.cardsContainer.children;
+  var storageIdeas = retrieveIdeas();
+  for (var i = 0; i < storageIdeas.length; i++) {
+    if (storageIdeas[i].starred === true) {
+      cardId[i].children[0].children[0].classList.toggle('active-favorite-btn');
     }
   }
 }
