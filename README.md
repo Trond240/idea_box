@@ -27,11 +27,13 @@
 
 ### The Comp Recreation 
 
-![14C23BB0-31F8-431C-A630-34B305FF0FC5_1_105_c](https://user-images.githubusercontent.com/49410633/67907444-ccf41280-fb6f-11e9-8f00-5d7fb7d49d55.jpeg)
-![28E711D1-20EA-4081-B086-D213987516AC_4_5005_c](https://user-images.githubusercontent.com/49410633/67907452-d1203000-fb6f-11e9-85f8-cc6c75f1cae0.jpeg)
-![03C8F860-02E3-4B10-BC2A-826CCC1C5B0C](https://user-images.githubusercontent.com/49410633/67907467-daa99800-fb6f-11e9-953e-36f3025c1fd7.jpeg)
-![B6F5F09F-5F1D-47E9-8D2F-4920BAB5E7B3](https://user-images.githubusercontent.com/49410633/67907474-de3d1f00-fb6f-11e9-9f75-b033ea9f45e9.jpeg)
+![14C23BB0-31F8-431C-A630-34B305FF0FC5_1_105_c](https://user-images.githubusercontent.com/49410633/67907930-95866580-fb71-11e9-8627-b21ecd05f5f9.jpeg)
 
+![CBC1A74D-3C1C-435E-A175-144C0DF5382A](https://user-images.githubusercontent.com/49410633/67907944-9b7c4680-fb71-11e9-9d13-c8956a25f337.jpeg)
+
+![03C8F860-02E3-4B10-BC2A-826CCC1C5B0C](https://user-images.githubusercontent.com/49410633/67907954-9f0fcd80-fb71-11e9-9db0-bf8e59000d81.jpeg)
+
+![B6F5F09F-5F1D-47E9-8D2F-4920BAB5E7B3](https://user-images.githubusercontent.com/49410633/67907965-a3d48180-fb71-11e9-99d0-a76e654ebec8.jpeg)
 
 ### Technologies used
 
