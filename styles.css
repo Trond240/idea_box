@@ -108,8 +108,12 @@ label {
 
 input,
 textarea {
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px;
+}
+
+.title-input {
+  height: 60px;
 }
 
 input {
@@ -192,7 +196,6 @@ textarea {
 .cards p {
   color: #1F1F3D;
   font-size: 24px;
-  margin-right: 16px;
   padding: 0px 15px 15px;
 }
 
@@ -259,7 +262,7 @@ textarea {
   }
 
   .cards {
-    min-width: 280px;
+    min-width: 285px;
     width: 60%;
   }
 
@@ -331,7 +334,7 @@ textarea {
 
   .cards {
     margin: 10px;
-    min-width: 300px;
+    min-width: 285px;
     width: 65%;
   }
 

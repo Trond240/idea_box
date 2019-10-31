@@ -25,7 +25,7 @@
 
 * Future iterations will allow the user to show only starred ideas and the ability to search for specific ideas that have been created.
 
-### The Comp Recreation 
+### The Comp Recreation
 
 ![14C23BB0-31F8-431C-A630-34B305FF0FC5_1_105_c](https://user-images.githubusercontent.com/49410633/67907930-95866580-fb71-11e9-8627-b21ecd05f5f9.jpeg)
 
@@ -43,12 +43,14 @@
 
 ### Challenges
 
- 
+
  * Grayson Palmer
-  - I had some challenges when it came to navigating the event paths. I feel like I understand it a lot better now, and how to simplify/refactor paths to be shorter and more simplistic. Local Storage was another really challenging component, especially manipulating it and reading back those manipulations on load (re: favorite button).
- 
+ - I had some challenges when it came to navigating the event paths. I feel like I understand it a lot better now, and how to simplify/refactor paths to be shorter and more simplistic. Local Storage was another really challenging component, especially manipulating it and reading back those manipulations on load (re: favorite button).
+
  * Tristan Holtz
+  - How to make the favorite feature translate to local storage on refresh took a lot of effort.
  
+
  * Trond Makonese
   - I had some challeneges when it came to pulling items out of local link. Leaving this project I feel i have a stronger understanding of local link. Pulling items out and targeting them by id in order to starr or delte was very tricky.
 
@@ -56,12 +58,14 @@
 
  * Grayson Palmer
   - I think we really nailed the comp and making it look good at multiple screen sizes. Coming out the other side of Local Storage struggles was also a big win in my book. I also feel we didn't just get things functioning correctly, I feel we did so in a very dry and succinct way. We definitely leveraged roll up functions to try and make it so each function only handled a single piece of the puzzle. 
- 
+
  * Tristan Holtz
+  - Getting local storage up and running without reengineering what we had created was a huge win!
  
  * Trond Makonese
   - Working with this team right off the back was a win for me. Also walking away with better skills with writing dry code and understaning how you can refactor was really helpful for my learning. I'm a very hands on learner and I felt I was able to contribute and be apart of the team.  
  
+
 ## Authors
 
 * Grayson Palmer
