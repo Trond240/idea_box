@@ -1,9 +1,9 @@
 class Idea {
-  constructor(id, title, body, starred) {
+  constructor(id, title, body) {
     this.id = id || Date.now();
     this.title = title;
     this.body = body;
-    this.starred = starred || false;
+    this.starred = false;
   }
 
   saveToStorage() {
@@ -11,13 +11,13 @@ class Idea {
     localStorage.setItem("ideaLocalStorage", stringifiedIdeas);
   }
 
-  updateIdea(){
+  updateIdea() {
     this.starred = !this.starred;
     var storageIdeas = retrieveIdeas();
     var newArray = [];
     for (var i = 0; i < storageIdeas.length; i++) {
       if (this.id === storageIdeas[i].id) {
-        storageIdeas[i].starred = this.starred;
+        storageIdeas[i].starred = !storageIdeas[i].starred;
       }
       newArray.push(storageIdeas[i]);
     }
