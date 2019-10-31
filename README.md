@@ -23,7 +23,7 @@
 
 * Future iterations will allow the user to show only starred ideas and the ability to search for spacific ideas that have been created.
 
-### The Comp Recreation 
+### The Comp Recreation
 
 ### Technologies used
 
@@ -33,21 +33,21 @@
 
 ### Challenges
 
- 
+
  * Grayson Palmer
- 
- * Tristan Holtz
- 
+
+ * Tristan Holtz- How to make the favorite feature translate to local storage on refresh took a lot of effort.
+
  * Trond Makonese
 
 ### Wins!!!
 
 * Grayson Palmer
- 
- * Tristan Holtz
- 
+
+ * Tristan Holtz- Getting local storage up and running without reengineering what we had created was a huge win!
+
  * Trond Makonese
- 
+
 ## Authors
 
 * Grayson Palmer
