@@ -12,6 +12,7 @@ class Idea {
   }
 
   updateIdea() {
+    this.starred = !this.starred;
     var storageIdeas = retrieveIdeas();
     var newArray = [];
     for (var i = 0; i < storageIdeas.length; i++) {
